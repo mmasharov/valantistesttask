@@ -47,6 +47,7 @@ function fillMerchList(ids, offset) {
     state['totalItems'] = ids.length;
     pageInfo.textContent = `${state['totalItems'] > (offset + state['itemsPerPage']) ? (1 + offset) : '1'}-${state['totalItems'] > (offset + state['itemsPerPage']) ? (offset + state['itemsPerPage']) : state['totalItems']} / ${state['totalItems']}`;
     const merchIds = ids.slice(offset, offset + state['itemsPerPage']);
+    list.innerHTML = '<div><img class="merch__loading" src="img/spinner.svg" alt="Loading..."></div>';
     const result = requestBackend({"action": "get_items", "params": {"ids": merchIds}})
             .then(res => filterItems(res['result']))
             .then(res => renderList(res))
@@ -58,6 +59,7 @@ function fillMerchList(ids, offset) {
 
 const initList = async () => {
     // Заполнение списка по умолчанию
+    list.innerHTML = '<div class="merch__loading"><img src="img/spinner.svg" alt="Loading..."></div>';
     const result = requestBackend({ "action": "get_ids" })
             .then(res => filterIds(res['result']))
             .then(res => fillMerchList(res, state['offset']));
