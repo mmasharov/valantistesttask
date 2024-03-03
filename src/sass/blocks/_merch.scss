@@ -1,0 +1,76 @@
+.merch {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 100vh;
+    background-color: $bg-color;
+    &__list {
+        margin-top: 50px;
+        border: 1px dotted black;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    &__filter {
+        padding: 10px;
+        input {
+            margin-left: 10px;
+            background-color: #fff;
+        }
+        label {
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        // button {
+        //     padding: 5px;
+        //     margin-left: 10px;
+        // }
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+        // button {
+        //     width: 35px;
+        //     height: 35px;
+        //     border: 2px solid black;
+        //     border-radius: 100%;
+        //     padding: 3px;
+        //     background-color: $elem-color;
+        //     img {
+        //         display: flex;
+        //         width: 100%;
+        //         height: 100%;
+        //     }
+        // }
+        span {
+            display: block;
+            margin: 0px 5px;
+            font-weight: 700;
+        }
+    }
+    &__item {
+        margin: 3px;
+        padding: 5px;
+        border: 1px dotted black;
+        border-radius: 5px;
+        background-color: $elem-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_id {
+            width: 330px;
+        }
+        &_name {
+            width: 350px;
+        }
+        &_price {
+            width: 200px;
+        }
+        &_brand {
+            width: 140px;
+        }
+    }
+}

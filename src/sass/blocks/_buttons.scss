@@ -1,0 +1,20 @@
+.button {
+    &__nav {
+        width: 35px;
+        height: 35px;
+        border: 2px solid black;
+        border-radius: 100%;
+        background-color: $elem-color;
+        img {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__control {
+        padding: 3px;
+        margin-left: 5px;
+        border-radius: 5px;
+        font-weight: 700;
+    }
+}

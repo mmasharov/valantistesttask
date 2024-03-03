@@ -1,0 +1,17 @@
+import { initList } from "./modules/list";
+import { controls } from "./modules/controls";
+
+let state = {
+    backend_url: 'https://api.valantis.store:41000/',
+    offset: 0,
+    itemsPerPage: 50,
+    totalItems: 0,
+    merchIds: []
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    initList();
+    controls();
+});
+
+export { state };
