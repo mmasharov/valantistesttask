@@ -45,7 +45,8 @@ function renderList(data) {
 function fillMerchList(ids, offset) {
     // Получение информации о товарах по айдишникам, отсеивание дублей, заполнение списка и инфы о странице списка
     state['totalItems'] = ids.length;
-    pageInfo.textContent = `${state['totalItems'] > (offset + state['itemsPerPage']) ? (1 + offset) : '1'}-${state['totalItems'] > (offset + state['itemsPerPage']) ? (offset + state['itemsPerPage']) : state['totalItems']} / ${state['totalItems']}`;
+    console.log(offset);
+    pageInfo.textContent = `${state['totalItems'] >= (offset + state['itemsPerPage']) ? (1 + offset) : '1'}-${state['totalItems'] > (offset + state['itemsPerPage']) ? (offset + state['itemsPerPage']) : state['totalItems']} / ${state['totalItems']}`;
     const merchIds = ids.slice(offset, offset + state['itemsPerPage']);
     list.innerHTML = '<div><img class="merch__loading" src="img/spinner.svg" alt="Loading..."></div>';
     const result = requestBackend({"action": "get_items", "params": {"ids": merchIds}})

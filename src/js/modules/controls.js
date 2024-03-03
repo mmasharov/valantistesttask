@@ -14,7 +14,7 @@ const nextButton = document.querySelector('#next'),
 function offsetChange(value, callback) {
     // Изменение состояния при переключении страниц для вычисления текущих номеров из общего числа
     state['offset'] += value;
-    if (state['offset'] >= state['totalItems']) {
+    if (state['offset'] >= state['totalItems'] || state['totalItems'] - state['itemsPerPage'] < 0) {
         state['offset'] = 0;
     }
     if (state['offset'] < 0) {
