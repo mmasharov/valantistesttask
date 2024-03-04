@@ -1,5 +1,6 @@
 import { initList } from "./modules/list";
 import { controls } from "./modules/controls";
+import { getBrands } from "./modules/search";
 
 let state = {
     backend_url: 'https://api.valantis.store:41000/',
@@ -12,6 +13,7 @@ let state = {
 window.addEventListener('DOMContentLoaded', () => {
     initList();
     controls();
+    getBrands();
 });
 
 export { state };
