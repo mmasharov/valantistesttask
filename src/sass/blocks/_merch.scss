@@ -15,10 +15,16 @@
         input {
             margin-left: 10px;
             background-color: #fff;
+            &:nth-child(4) {
+                width: 100px;
+            }
         }
         label {
             margin-left: 10px;
             font-weight: 700;
+        }
+        select {
+            margin-left: 10px;
         }
     }
     &__control {
