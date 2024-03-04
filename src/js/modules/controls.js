@@ -69,10 +69,20 @@ const controls = () => {
         searchPrice.value = '';
         searchBrand.value = '';
     });
+    searchProduct.addEventListener('keypress', (e) => {
+        // в поле поиска по названию можно вводить только руссике и английские буквы
+        if (e.key.match(/[^а-яё a-z]/ig)) {
+            e.preventDefault();
+        }
+    });
     searchPrice.addEventListener('focus', (e) => {
         e.preventDefault();
         searchProduct.value = '';
         searchBrand.value = '';
+    });
+    searchPrice.addEventListener('input', () => {
+        // в поле поиска по цене можно вводить только цифры и точку
+        searchPrice.value = searchPrice.value.replace(/[^\.\d\s]/, '');
     });
     searchBrand.addEventListener('focus', (e) => {
         e.preventDefault();
